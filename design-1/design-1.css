@@ -9,6 +9,12 @@ body {
   /* match the dark bg */
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
 header {
   width: 90%;
   background-color: transparent;
