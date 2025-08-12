@@ -1,0 +1,517 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0f0d1c;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+header {
+  width: 90%;
+  background-color: transparent;
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3vh 7vw 0 7vw;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 3vw;
+  font-size: 1.4rem;
+}
+
+li {
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+li a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.801);
+  position: relative;
+  display: inline-block;
+}
+li a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transition: transform 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: center;
+}
+li:hover a::before {
+  transform: scaleX(1);
+}
+li a:hover {
+  color: white;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.logo p {
+  font-size: 1.5rem;
+  color: white;
+  align-self: center;
+}
+
+.sign-in-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.sign-in {
+  background-color: #0f0d1c;
+  position: relative;
+  padding: 25px 30px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  overflow: visible;
+  z-index: 1;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  font-family: "Kanit", sans-serif;
+}
+
+.sign-in::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50px;
+  padding: 2px;
+  background: linear-gradient(90deg, #ce63ff, #9a4eff);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 0;
+}
+
+.sign-in {
+  position: relative;
+  background-color: #0f0d1c;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  overflow: hidden;
+}
+
+.sign-in span {
+  background: linear-gradient(90deg, #ce63ff, #9a4eff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent; /* fallback for browsers not supporting background-clip:text */
+  position: relative;
+  z-index: 1;
+}
+
+.sign-in::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+  transition: transform 0.3s ease;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+.sign-in:hover::after {
+  transform: scaleX(1);
+}
+
+.sign-up {
+  background-color: transparent;
+  position: relative;
+  padding: 25px 30px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  overflow: hidden;
+  font-family: "Kanit", sans-serif;
+  font-weight: 300;
+}
+
+.sign-up::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
+  background: linear-gradient(90deg, #ce63ff, #9a4eff);
+  z-index: -1;
+  border-radius: 50px;
+  transition: transform 0.3s ease;
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.sign-up::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
+  background: linear-gradient(90deg, #ce63ff, #9a4eff);
+  z-index: -1;
+  border-radius: 50px;
+  transition: transform 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.sign-up:hover::after {
+  transform: scaleX(1);
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  background:
+    radial-gradient(circle at -5% 40%, #9b4eff34 5px, transparent 370px),
+    radial-gradient(circle at 50% 58%, #ce63ff4d 5px, transparent 370px),
+    radial-gradient(circle at 100% 40%, #9b4eff34 5px, transparent 370px);
+}
+
+.background-stars {
+  top: 200px;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  overflow: hidden;
+}
+.star {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  filter: blur(10px);
+  z-index: 1;
+}
+.star img {
+  width: 100%;
+  height: 100%;
+}
+.purple-star {
+  top: 18%;
+  left: 75%;
+}
+.white-star {
+  top: 35%;
+  left: 15%;
+}
+.purple-star-2 {
+  top: 70%;
+  left: 93%;
+}
+.content {
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+.explore-button {
+  background-color: transparent;
+  position: relative;
+  padding: 5px 25px;
+  color: rgba(255, 255, 255, 0.781);
+  cursor: pointer;
+  border: none;
+  border-radius: 50px;
+  font-size: 20px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  box-shadow: 0 0 90px #9b4eff7f;
+  transition: color 0.3s ease;
+  font-family: "Kanit", sans-serif;
+  font-weight: 300;
+}
+
+.explore-button::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
+  background: linear-gradient(90deg, #ce63ff, #9a4eff);
+  z-index: -1;
+  border-radius: 50px;
+  transition: transform 0.3s ease;
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.explore-button::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
+  background: linear-gradient(90deg, #ce63ff, #9a4eff);
+  z-index: -1;
+  border-radius: 50px;
+  transition: transform 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.explore-button:hover::after {
+  transform: scaleX(1);
+}
+.content h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 20px;
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+}
+.content h1 span {
+  background: linear-gradient(90deg, #bf53f0, #9a4eff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 3rem;
+  font-weight: 500;
+  color: transparent; /* fallback for browsers not supporting background-clip:text */
+}
+.content p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.811);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-family: "Kanit", sans-serif;
+  font-weight: 300;
+}
+.nft-slider {
+  position: relative;
+  overflow: visible;
+  width: 100%;
+  height: 600px;
+  pointer-events: none;
+  margin-top: -33%;
+}
+.nft-slider .images {
+  left: 50%;
+  bottom: 0;
+  top: 15%;
+  width: 100%;
+  height: 700px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  position: relative;
+}
+.nft-slider .images .image {
+  pointer-events: auto;
+  position: absolute;
+}
+.nft-slider .images .image {
+  position: absolute;
+  width: 240px;
+  height: 300px;
+  overflow: hidden;
+  background-color: transparent;
+   box-shadow: 0 8px 32px #0002;
+  border-radius: 30px;
+}
+.nft-slider .images .image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  transition: transform 0.3s;
+  padding: 10%;
+}
+/* Arrange 7 images in a half-circle */
+.nft-slider .images .image:nth-child(1) {
+  left: 7%;
+  bottom: 0px;
+  transform: rotate(-31deg) translateY(-50%);
+  transition: transform 0.3s;
+}
+.nft-slider .images .image:nth-child(1):hover {
+  transform: rotate(-31deg) translateY(-50%) scale(1.1);
+  z-index: 2;
+}
+.nft-slider .images .image:nth-child(2) {
+  left: 19%;
+  bottom: 120px;
+  transform: rotate(-24deg) translateY(-50%);
+  transition: transform 0.3s;
+}
+.nft-slider .images .image:nth-child(2):hover {
+  transform: rotate(-24deg) translateY(-50%) scale(1.1);
+  z-index: 2;
+}
+.nft-slider .images .image:nth-child(3) {
+  left: 32%;
+  bottom: 200px;
+  transform: rotate(-10deg) translateY(-50%);
+  transition: transform 0.3s;
+}
+.nft-slider .images .image:nth-child(3):hover {
+  transform: rotate(-10deg) translateY(-50%) scale(1.1);
+  z-index: 2;
+}
+.nft-slider .images .image:nth-child(4) {
+  left: 45%;
+  bottom: 220px;
+  transform: rotate(0deg) translateY(-50%);
+  background: linear-gradient(180deg, #9a4eff, #9b4effbe, #9b4eff94, rgba(255, 255, 255, 0.562));
+  transition: transform 0.3s;
+}
+.nft-slider .images .image:nth-child(4):hover {
+  transform: rotate(0deg) translateY(-50%) scale(1.1);
+  z-index: 2;
+}
+.nft-slider .images .image:nth-child(5) {
+  left: 58%;
+  bottom: 200px;
+  transform: rotate(10deg) translateY(-50%);
+  transition: transform 0.3s;
+}
+.nft-slider .images .image:nth-child(5):hover {
+  transform: rotate(10deg) translateY(-50%) scale(1.1);
+  z-index: 2;
+}
+.nft-slider .images .image:nth-child(6) {
+  left: 70.5%;
+  bottom: 120px;
+  transform: rotate(24deg) translateY(-50%);
+  transition: transform 0.3s;
+}
+.nft-slider .images .image:nth-child(6):hover {
+  transform: rotate(24deg) translateY(-50%) scale(1.1);
+  z-index: 2;
+}
+.nft-slider .images .image:nth-child(7) {
+  left: 82%;
+  bottom: 0px;
+  transform: rotate(31deg) translateY(-50%);
+  transition: transform 0.3s;
+}
+.nft-slider .images .image:nth-child(7):hover {
+  transform: rotate(31deg) translateY(-50%) scale(1.1);
+  z-index: 2;
+}
+.circles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
+  z-index: 2;
+  pointer-events: auto;
+}
+.circle:hover {
+  width: 20px;
+  height: 20px;
+  background-color: #9a4eff;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+}
+.buttons {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 90%;
+  pointer-events: auto;
+}
+.buttons .prev {
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 15%;
+  font-size: 30px;
+  background-color: transparent;
+
+}
+.buttons .next {
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 15%;
+  font-size: 30px;
+  background-color: transparent;
+}
+.buttons .prev:hover,
+.buttons .next:hover {
+  color: #9a4eff;
+  transition: color 0.3s ease;
+}
